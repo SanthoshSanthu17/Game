@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+    <title>Ben 10 Galactic Battle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+    <section id="menu-screen" class="screen">
+        <div class="menu-card">
+            <h1>BEN 10 GALACTIC BATTLE</h1>
+
+            <label>Player Name</label>
+            <input id="player-name" type="text" maxlength="20" placeholder="Enter your name">
+
+            <button id="create-room">CREATE ROOM</button>
+
+            <label>Room Code</label>
+            <input id="room-code" type="text" maxlength="6" placeholder="Enter room code">
+
+            <button id="join-room">JOIN ROOM</button>
+
+            <div id="menu-message"></div>
+        </div>
+    </section>
+
+    <section id="waiting-screen" class="screen hidden">
+        <div class="waiting-card">
+            <h1>ROOM CREATED</h1>
+            <div id="waiting-code"></div>
+            <p>Share this room code with your friend.</p>
+            <p class="waiting-text">Waiting for opponent...</p>
+        </div>
+    </section>
+
+    <section id="game-screen" class="screen hidden">
+
+        <header>
+            <div id="room-info"></div>
+            <div id="opponent-info"></div>
+        </header>
+
+        <main class="battle-area">
+
+            <div class="card-slot opponent-slot">
+                <div id="opponent-card"></div>
+            </div>
+
+            <div class="vs">VS</div>
+
+            <div class="card-slot own-slot">
+                <div id="own-card"></div>
+            </div>
+
+            <div id="turn-message"></div>
+
+            <div id="stat-buttons">
+                <button data-stat="rank">RANK</button>
+                <button data-stat="height">HEIGHT</button>
+                <button data-stat="weight">WEIGHT</button>
+                <button data-stat="speed">SPEED</button>
+                <button data-stat="power">POWER</button>
+                <button data-stat="intelligence">INTELLIGENCE</button>
+                <button data-stat="defense">DEFENSE</button>
+            </div>
+        </main>
+
+        <div id="player-info"></div>
+
+        <div id="result-banner" class="hidden"></div>
+
+    </section>
+
+    <section id="game-over-screen" class="screen hidden">
+        <div id="game-over-message"></div>
+    </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
