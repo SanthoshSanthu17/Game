@@ -4,7 +4,7 @@ from server.server import GameServer
 
 
 HOST = "0.0.0.0"
-PORT = 8000
+PORT = 8765
 
 
 async def main():

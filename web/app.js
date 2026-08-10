@@ -49,10 +49,11 @@ async function loadCards() {
 }
 
 function websocketUrl() {
-    const protocol =
-        window.location.protocol === "https:" ? "wss:" : "ws:";
+    if (window.location.protocol === "https:") {
+        return `wss://${window.location.host}`;
+    }
 
-    return `${protocol}//${window.location.host}`;
+    return `ws://${window.location.hostname}:8765`;
 }
 
 function connect() {
@@ -331,7 +332,7 @@ function showRoundResult(result) {
     const winner = result.winner;
     const tie = result.is_tie;
 
-    resultBanner.className.remove("hidden");
+    resultBanner.classList.remove("hidden");
     resultBanner.classList.remove(
         "result-win",
         "result-lose",
