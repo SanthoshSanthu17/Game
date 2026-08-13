@@ -4,86 +4,581 @@
     <meta charset="UTF-8">
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
+
     <title>Ben 10 Galactic Battle</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="/web/style.css">
 </head>
+
 <body>
 
-<div id="app">
+    <!-- =========================================================
+         MENU SCREEN
+    ========================================================== -->
 
     <section id="menu-screen" class="screen">
-        <div class="menu-card">
-            <h1>BEN 10 GALACTIC BATTLE</h1>
 
-            <label>Player Name</label>
-            <input id="player-name" type="text" maxlength="20" placeholder="Enter your name">
+        <div class="menu-background">
 
-            <button id="create-room">CREATE ROOM</button>
+            <div class="hero-glow hero-glow-left"></div>
+            <div class="hero-glow hero-glow-right"></div>
 
-            <label>Room Code</label>
-            <input id="room-code" type="text" maxlength="6" placeholder="Enter room code">
+            <div class="hero-character hero-ben">
+                <img
+                    src="/assets/images/ben_tennyson.png"
+                    alt=""
+                >
+            </div>
 
-            <button id="join-room">JOIN ROOM</button>
+            <div class="hero-character hero-gwen">
+                <img
+                    src="/assets/images/gwen_tennyson.png"
+                    alt=""
+                >
+            </div>
 
-            <div id="menu-message"></div>
+            <div class="hex-pattern"></div>
+
+            <div class="background-vignette"></div>
+
         </div>
+
+
+        <div class="menu-content">
+
+            <!-- LOGO -->
+
+            <div class="game-logo">
+
+                <div class="logo-main">
+                    <span class="logo-ben">BEN</span>
+                    <span class="logo-ten">10</span>
+                </div>
+
+                <div class="logo-subtitle">
+                    GALACTIC BATTLE
+                </div>
+
+                <div class="logo-divider">
+
+                    <span></span>
+
+                    <div class="omnitrix-logo">
+                        <svg
+                            viewBox="0 0 100 100"
+                            aria-hidden="true"
+                        >
+                            <!-- Outer Omnitrix bezel -->
+                            <circle
+                                cx="50"
+                                cy="50"
+                                r="46"
+                                fill="#080c09"
+                                stroke="#9dff00"
+                                stroke-width="4"
+                            />
+
+                            <!-- Inner bezel -->
+                            <circle
+                                cx="50"
+                                cy="50"
+                                r="38"
+                                fill="#111811"
+                                stroke="#527f00"
+                                stroke-width="3"
+                            />
+
+                            <!-- Omnitrix hourglass symbol -->
+                            <path
+                                d="
+                                    M35 24
+                                    L65 24
+                                    L57 42
+                                    L52 50
+                                    L57 58
+                                    L65 76
+                                    L35 76
+                                    L43 58
+                                    L48 50
+                                    L43 42
+                                    Z
+                                "
+                                fill="#a6ff00"
+                            />
+
+                            <!-- Black center separation -->
+                            <path
+                                d="
+                                    M43 42
+                                    L57 42
+                                    L52 50
+                                    L57 58
+                                    L43 58
+                                    L48 50
+                                    Z
+                                "
+                                fill="#080c09"
+                            />
+
+                            <!-- Center dot -->
+                            <circle
+                                cx="50"
+                                cy="50"
+                                r="5"
+                                fill="#a6ff00"
+                            />
+                        </svg>
+                    </div>
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MENU CARD -->
+
+            <div class="menu-card">
+
+                <!-- PLAYER NAME -->
+
+                <div class="field-group">
+
+                    <label for="player-name">
+
+                        <span class="field-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <circle
+                                    cx="12"
+                                    cy="7"
+                                    r="4"
+                                    fill="currentColor"
+                                />
+
+                                <path
+                                    d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"
+                                    fill="currentColor"
+                                />
+                            </svg>
+                        </span>
+
+                        <span>PLAYER NAME</span>
+
+                    </label>
+
+                    <input
+                        id="player-name"
+                        type="text"
+                        maxlength="20"
+                        autocomplete="off"
+                        placeholder="Enter your name"
+                    >
+
+                </div>
+
+
+                <!-- CREATE ROOM -->
+
+                <button
+                    id="create-room"
+                    class="action-button primary-button"
+                    type="button"
+                >
+
+                    <span class="button-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="9"
+                                cy="8"
+                                r="4"
+                                fill="currentColor"
+                            />
+
+                            <path
+                                d="M2.5 21c0-4 2.7-6.5 6.5-6.5s6.5 2.5 6.5 6.5"
+                                fill="currentColor"
+                            />
+
+                            <path
+                                d="M18 7v8M14 11h8"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </span>
+
+                    <span class="button-text">
+                        CREATE ROOM
+                    </span>
+
+                    <span class="button-arrow">
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M9 5l7 7-7 7"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </span>
+
+                </button>
+
+
+                <!-- OR -->
+
+                <div class="or-divider">
+                    <span></span>
+                    <strong>OR</strong>
+                    <span></span>
+                </div>
+
+
+                <!-- ROOM CODE -->
+
+                <div class="field-group">
+
+                    <label for="room-code">
+
+                        <span class="field-icon key-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <circle
+                                    cx="8"
+                                    cy="15"
+                                    r="4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+
+                                <path
+                                    d="M11 12l9-9M16 5l3 3M13 8l3 3"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </span>
+
+                        <span>ROOM CODE</span>
+
+                    </label>
+
+                    <input
+                        id="room-code"
+                        type="text"
+                        maxlength="6"
+                        autocomplete="off"
+                        placeholder="Enter room code"
+                    >
+
+                </div>
+
+
+                <!-- JOIN ROOM -->
+
+                <button
+                    id="join-room"
+                    class="action-button secondary-button"
+                    type="button"
+                >
+
+                    <span class="button-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="9"
+                                cy="8"
+                                r="3.5"
+                                fill="currentColor"
+                            />
+
+                            <circle
+                                cx="17"
+                                cy="9"
+                                r="3"
+                                fill="currentColor"
+                            />
+
+                            <path
+                                d="M2.5 21c0-4 2.8-6 6.5-6s6.5 2 6.5 6"
+                                fill="currentColor"
+                            />
+
+                            <path
+                                d="M15 15c3.5 0 6 2 6 6"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </span>
+
+                    <span class="button-text">
+                        JOIN ROOM
+                    </span>
+
+                    <span class="button-arrow">
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M9 5l7 7-7 7"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </span>
+
+                </button>
+
+
+                <div id="menu-message"></div>
+
+            </div>
+
+
+            <!-- BOTTOM PROMO -->
+
+            <div class="menu-promo">
+
+                <div class="promo-cards">
+
+                    <svg
+                        viewBox="0 0 80 80"
+                        aria-hidden="true"
+                    >
+                        <rect
+                            x="12"
+                            y="18"
+                            width="42"
+                            height="55"
+                            rx="6"
+                            transform="rotate(-12 12 18)"
+                            fill="#7fce00"
+                            opacity="0.65"
+                            stroke="#b5ff00"
+                            stroke-width="2"
+                        />
+
+                        <rect
+                            x="25"
+                            y="10"
+                            width="42"
+                            height="55"
+                            rx="6"
+                            transform="rotate(8 25 10)"
+                            fill="#a6ff00"
+                            opacity="0.85"
+                            stroke="#d0ff62"
+                            stroke-width="2"
+                        />
+
+                        <circle
+                            cx="46"
+                            cy="38"
+                            r="11"
+                            fill="#071007"
+                            stroke="#9dff00"
+                            stroke-width="3"
+                        />
+
+                        <path
+                            d="M46 28l5 8-2 5 5 8-8 5-8-5 5-8-2-5z"
+                            fill="#a6ff00"
+                        />
+                    </svg>
+
+                </div>
+
+                <div class="promo-text">
+
+                    <strong>
+                        COLLECT. BATTLE. WIN.
+                    </strong>
+
+                    <span>
+                        Build your deck and become the ultimate champion.
+                    </span>
+
+                </div>
+
+                <div class="promo-symbol">
+                    X
+                </div>
+
+            </div>
+
+        </div>
+
     </section>
 
-    <section id="waiting-screen" class="screen hidden">
+
+    <!-- =========================================================
+         WAITING SCREEN
+    ========================================================== -->
+
+    <section
+        id="waiting-screen"
+        class="screen hidden"
+    >
+
+        <div class="waiting-background"></div>
+
         <div class="waiting-card">
+
+            <div class="waiting-logo">
+                BEN <span>10</span>
+            </div>
+
+            <div class="waiting-subtitle">
+                GALACTIC BATTLE
+            </div>
+
+            <div class="waiting-divider"></div>
+
             <h1>ROOM CREATED</h1>
+
             <div id="waiting-code"></div>
-            <p>Share this room code with your friend.</p>
-            <p class="waiting-text">Waiting for opponent...</p>
+
+            <p>
+                Share this room code with your friend.
+            </p>
+
+            <p class="waiting-text">
+                Waiting for opponent...
+            </p>
+
         </div>
+
     </section>
 
-    <section id="game-screen" class="screen hidden">
+
+    <!-- =========================================================
+         GAME SCREEN
+    ========================================================== -->
+
+    <section
+        id="game-screen"
+        class="screen hidden"
+    >
 
         <header>
+
             <div id="room-info"></div>
+
             <div id="opponent-info"></div>
+
+            <div id="player-info"></div>
+
         </header>
+
 
         <main class="battle-area">
 
             <div class="card-slot opponent-slot">
+
                 <div id="opponent-card"></div>
+
             </div>
 
-            <div class="vs">VS</div>
+
+            <div class="vs">
+                VS
+            </div>
+
 
             <div class="card-slot own-slot">
+
                 <div id="own-card"></div>
+
             </div>
+
 
             <div id="turn-message"></div>
 
+
             <div id="stat-buttons">
-                <button data-stat="rank">RANK</button>
-                <button data-stat="height">HEIGHT</button>
-                <button data-stat="weight">WEIGHT</button>
-                <button data-stat="speed">SPEED</button>
-                <button data-stat="power">POWER</button>
-                <button data-stat="intelligence">INTELLIGENCE</button>
-                <button data-stat="defense">DEFENSE</button>
+
+                <button data-stat="rank">
+                    RANK
+                </button>
+
+                <button data-stat="height">
+                    HEIGHT
+                </button>
+
+                <button data-stat="weight">
+                    WEIGHT
+                </button>
+
+                <button data-stat="speed">
+                    SPEED
+                </button>
+
+                <button data-stat="power">
+                    POWER
+                </button>
+
+                <button data-stat="intelligence">
+                    INTELLIGENCE
+                </button>
+
+                <button data-stat="defense">
+                    DEFENSE
+                </button>
+
             </div>
+
         </main>
 
-        <div id="player-info"></div>
 
         <div id="result-banner" class="hidden"></div>
 
     </section>
 
-    <section id="game-over-screen" class="screen hidden">
+
+    <!-- =========================================================
+         GAME OVER
+    ========================================================== -->
+
+    <section
+        id="game-over-screen"
+        class="screen hidden"
+    >
+
         <div id="game-over-message"></div>
+
     </section>
 
-</div>
 
-<script src="app.js"></script>
+    <script src="/web/app.js"></script>
+
 </body>
 </html>
